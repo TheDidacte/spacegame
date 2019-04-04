@@ -1,0 +1,36 @@
+#game
+{
+	width: 1500px;
+	height: 1000px;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.tile
+{
+	width: 8px;
+	height: 8px;
+	margin: 1px;
+}
+
+.void
+{
+	background-color: lightgrey;
+}
+
+.rock
+{
+	background-color: darkgrey;
+}
+
+.red
+{
+	background-color: red !important;
+}
+
+.blue
+{
+	background-color: blue !important;
+}
