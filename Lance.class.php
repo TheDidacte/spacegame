@@ -16,8 +16,8 @@ Class Lance extends Weapon
 		$this->_longRange = array(61, 900);
 		$this->_effectZone = 0;
 		$this->_abilities = 0;
-		$this->initialCharges = 0;
+		$this->_initialCharges = 0;
 		$this->_name = $name;
-		$this->_charge = $this->_initialCharges;
+		$this->_charges = $this->_initialCharges;
 	}
 }

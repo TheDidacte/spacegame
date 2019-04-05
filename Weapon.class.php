@@ -41,6 +41,16 @@ Class Weapon
 	{
 		$this->_charges++;
 	}
+	
+	public function removeCharge()
+	{
+		$this->_charges--;
+	}
+
+	public function getCharge()
+	{
+		return $this->_charges;
+	}
 
 	public function getName()
 	{

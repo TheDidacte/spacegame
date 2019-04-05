@@ -12,6 +12,15 @@ $y = intval($_POST['y']);
 $ship = $g->getPlayers()[$g->getTurn()]->getSpaceships()[$g->getPlayers()[$g->getTurn()]->getActive()];
 $weapon = $ship->getWeapons()[0];
 
+if ($weapon->getCharge() === 0)
+{
+	echo 3;
+	exit ;
+}
+
+$g->getPlayers()[$g->getTurn()]->getSpaceships()[$g->getPlayers()[$g->getTurn()]->getActive()]->getWeapons()[0]->removeCharge();
+
+$_SESSION['game'] = serialize($g);
 
 foreach ($g->getPlayers() as $p_id => $p)
 {

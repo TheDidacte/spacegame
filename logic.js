@@ -181,8 +181,10 @@ function onTileClick(index)
 				nextPhase();
 				alert('Nice shot !');
 			}
+			else if (parseInt(e) === 3)
+				alert('No charges left on your weapon !');
 			else
-				console.log('alive');
+				console.log(e);
 		});
 	}
 	if (selectedShip != 0)
