@@ -179,12 +179,14 @@ function onTileClick(index)
 						$('#game div:nth-child('+ (k + 1 + selectedShip[0][0] + 150 * (l + selectedShip[0][1])) +')').addClass('selected');
 				
 				nextPhase();
-				alert('Nice shot !');
+				alert('Excellent shot ! It\'s dead !');
 			}
 			else if (parseInt(e) === 3)
 				alert('No charges left on your weapon !');
-			else
-				console.log(e);
+			else if (parseInt(e) > 10)
+				alert('Oops... You did a ' + parseInt(e) % 10 + ' and it\'s not enough !');
+			else if (parseInt(e) === 0)
+				alert("Nice shot !");
 		});
 	}
 	if (selectedShip != 0)

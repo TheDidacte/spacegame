@@ -18,6 +18,8 @@ if ($weapon->getCharge() === 0)
 	exit ;
 }
 
+$dice = rand(1, 6);
+
 $g->getPlayers()[$g->getTurn()]->getSpaceships()[$g->getPlayers()[$g->getTurn()]->getActive()]->getWeapons()[0]->removeCharge();
 
 $_SESSION['game'] = serialize($g);
@@ -37,6 +39,16 @@ foreach ($g->getPlayers() as $p_id => $p)
 					$dist = sqrt(($ship->getPos()[0] - $x) * ($ship->getPos()[0] - $x) + ($ship->getPos()[1] - $y) * ($ship->getPos()[1] - $y));
 					if ($dist < $weapon->getRanges()[2])
 					{
+
+						if ($dist < $weapon->getRanges()[1])
+							$dice++;
+						if ($dice < $weapon->getRanges()[0])
+							$dice++;
+						if ($dice < 6)
+						{
+							echo '1' . strval($dice);
+							exit ;
+						}
 						$dead = $g->getPlayers()[$p_id]->getSpaceships()[$s_id]->damage();
 						echo $dead;
 						$_SESSION['game'] = serialize($g);
