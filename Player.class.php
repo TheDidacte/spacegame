@@ -15,6 +15,11 @@ Class Player
 	const MOVE = 1;
 	const SHOOT = 2;
 
+	public static function doc()
+		    {
+				        echo file_get_contents('Player.doc.txt');
+						    }
+
 	public function __construct($name)
 	{
 		$this->_name = $name;

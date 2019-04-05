@@ -87,6 +87,7 @@ function updatePlayerTurn()
 
 function nextPhase()
 {
+	if (selectedShip != 0)
 	$.post('setNextPhase.php', {}, function (res){
 		$('#orders').hide();
 		console.log(res);
@@ -142,7 +143,6 @@ function onTileClick(index)
 	{
 		var i = index % 150;
 		var j = Math.floor(index / 150);
-		console.log(i, j);
 		$.post('moveShip.php', {x: i, y: j}, function(e){
 			console.log(e);
 			if (parseInt(e) > 0)
@@ -157,7 +157,16 @@ function onTileClick(index)
 				for (var k = 0; k < selectedShip[1][0]; k++)
 					for (var l = 0; l < selectedShip[1][1]; l++)
 						$('#game div:nth-child('+ (k + 1 + selectedShip[0][0] + 150 * (l + selectedShip[0][1])) +')').addClass('selected');
-			}
+					nextPhase();
+				}
+		});
+	}
+	else if (player_turn == 2)
+	{
+		var i = index % 150;
+		var j = Math.floor(index / 150);
+		$.post('shoot.php', {x: i, y: j}, function (e){
+			console.log(e);
 		});
 	}
 	if (selectedShip != 0)

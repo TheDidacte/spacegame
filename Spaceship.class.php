@@ -2,7 +2,7 @@
 
 require_once('Weapon.class.php');
 
-Class Spaceship
+abstract Class Spaceship
 {
 	protected $_name;
 	protected $_size;
@@ -17,9 +17,9 @@ Class Spaceship
 	protected $_idle;
 	protected $_activated;
 
-	public function __construct(array $arr)
+	public static function doc()
 	{
-
+		echo file_get_contents('Spaceship.doc.txt');
 	}
 
 	public function getPos()
@@ -60,6 +60,12 @@ Class Spaceship
 	public function getSpeed()
 	{
 		return $this->_speed;
+	}
+
+	public function reset()
+	{
+		$this->_hasMove = 0;
+		echo 'pute';
 	}
 }
 

@@ -5,6 +5,11 @@ require_once('Lance.class.php');
 
 Class FregateImperial extends Spaceship
 {
+	public static function doc()
+	{
+		echo file_get_contents('FregateImperial.doc.txt');
+	}
+	
 	public function __construct($name)
 	{
 		$this->_size = array(4, 1);

@@ -17,6 +17,11 @@ Class Weapon
 	const MACHINE_GUN = 3;
 	const CANON = 4;
 
+	public static function doc()
+	{
+		echo file_get_contents('Weapon.doc.txt');
+	}
+
 	public function __construct(array $arr)
 	{
 		if ($arr['preset'] === self::LANCE)
@@ -40,6 +45,11 @@ Class Weapon
 	public function getName()
 	{
 		return $this->_name;
+	}
+
+	public function getRanges()
+	{
+		return array($this->_shortRange[1], $this->_mediumRange[1], $this->_longRange[1]);
 	}
 }
 

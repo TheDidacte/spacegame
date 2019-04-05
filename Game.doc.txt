@@ -1,0 +1,16 @@
+This class is the main class for the game.
+It implements the IGame interface that specify basic methods to run a basic game.
+
+To initialize, only do the following:
+new Game();
+It creates the map for you.
+
+It implements the following methods:
+
+public function addPlayer(Player $p);
+Add a player into the game
+
+public function initSpaceshipPos();
+Once all the players have been added, it position the players apart from each other.
+
+Then, it only implements setters and getters for its attributes.

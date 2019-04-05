@@ -1,0 +1,12 @@
+This class handles the players.
+
+To create one, use like this:
+
+new Player( "Name" );
+
+This class has the following methods:
+
+addSpaceship(Spaceship $s);
+Add the spaceship $s to the player
+
+Then, it only implements setters and getters for its attributes.

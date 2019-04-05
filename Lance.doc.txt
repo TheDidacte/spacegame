@@ -1,0 +1,2 @@
+This class inherits from Weapon.class.php.
+It only initializes its values to define a unique weapon to use for the game.

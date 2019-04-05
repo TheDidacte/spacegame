@@ -1,0 +1,19 @@
+This class handles spacheships in the game.
+
+It's abstract to only enable use from children classes.
+It has the following attributes:
+
+protected $_name;
+protected $_size;
+protected $_pos;
+protected $_sprite;
+protected $_life;
+protected $_powerPoint;
+protected $_speed;
+protected $_maneuver;
+protected $_shield;
+protected $_weapons;
+protected $_idle;
+protected $_activated;
+
+This class doesn't provide any special method, only getters and setters for its attributes.

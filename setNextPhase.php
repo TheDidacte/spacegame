@@ -6,6 +6,8 @@ require_once('FregateImperial.class.php');
 
 $g = unserialize($_SESSION['game']);
 
+$g->getPlayers()[$g->getTurn()]->getSpaceships()[$g->getPlayers()[$g->getTurn()]->getActive()]->reset();
+
 echo $g->getTurn() . ':' . $g->getPlayers()[$g->getTurn()]->getTurn() . PHP_EOL;
 
 if ($g->getPlayers()[$g->getTurn()]->getTurn() === Player::SHOOT)

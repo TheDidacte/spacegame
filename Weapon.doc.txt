@@ -1,0 +1,21 @@
+This class handles weapons in the game.
+
+It uses presets, or inherited classes like Lance.class.php.
+
+To create one, use:
+new Weapon(array( name => 'Name', preset => Weapon::SIDE_LASER ))
+
+Preset can be :
+
+- SIDE_LASER
+- LANCE
+- HEAVY_LANCE
+- MACHINE_GUN
+- CANON
+
+This class implements the following methods:
+
+addCharge();
+Add 1 to the charge of the weapon
+
+And the getters for ranges and name.
