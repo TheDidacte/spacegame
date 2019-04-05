@@ -70,6 +70,16 @@ Class Game
 	{
 		return $this->_players;
 	}
+
+	public function getTurn()
+	{
+		return $this->_turn;
+	}
+
+	public function setTurn($t)
+	{
+		$this->_turn = $t;
+	}
 }
 
 ?>

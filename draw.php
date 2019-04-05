@@ -13,7 +13,7 @@ function draw_board()
 		{
 			//echo $b[$i][$j] . PHP_EOL;
 			if ($b[$i][$j] === Game::VOID)
-				echo '<div class="tile void"></div>' . PHP_EOL;
+				echo '<div class="tile void" onclick="onTileClick('. ($j + 150 * $i) .');"></div>' . PHP_EOL;
 			else if ($b[$i][$j] === Game::ROCK)
 				echo '<div class="tile rock"></div>' . PHP_EOL;
 		}

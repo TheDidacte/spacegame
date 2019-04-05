@@ -16,6 +16,7 @@ Class FregateImperial extends Spaceship
 		$this->_idle = True;
 		$this->_weapons = array(new Lance('SuperLance'));
 		$this->_name = $name;
+		$this->_activated = 0;
 	}
 }
 

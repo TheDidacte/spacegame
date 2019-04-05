@@ -15,6 +15,7 @@ Class Spaceship
 	protected $_shield;
 	protected $_weapons;
 	protected $_idle;
+	protected $_activated;
 
 	public function __construct(array $arr)
 	{
@@ -34,6 +35,31 @@ Class Spaceship
 	public function getSize()
 	{
 		return $this->_size;
+	}
+
+	public function getName()
+	{
+		return $this->_name;
+	}
+
+	public function getPowerPoint()
+	{
+		return $this->_powerPoint;
+	}
+
+	public function getWeapons()
+	{
+		return $this->_weapons;
+	}
+
+	public function addShield()
+	{
+		$this->_shield++;
+	}
+
+	public function getSpeed()
+	{
+		return $this->_speed;
 	}
 }
 

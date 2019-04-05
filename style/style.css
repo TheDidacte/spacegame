@@ -2,7 +2,7 @@
 {
 	width: 1500px;
 	height: 1000px;
-	margin: auto;
+	/*margin: auto;*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -12,7 +12,12 @@
 {
 	width: 8px;
 	height: 8px;
-	margin: 1px;
+	border: 1px solid white;
+}
+
+.selected
+{
+	border: 1px solid green;
 }
 
 .void
@@ -33,4 +38,66 @@
 .blue
 {
 	background-color: blue !important;
+}
+.red, .blue
+{
+	cursor: pointer;
+}
+#turn
+{
+	text-align: center;
+	margin-top: 20px;
+	font-family: Helvetica;
+	font-size: 20px;
+}
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#player_turn
+{
+	text-align: center;
+	font-size: 25px;
+	color: red;
+	font-weight: 800;
+	font-family: Helvetica;
+}
+
+#next_phase
+{
+	text-align: center;
+	cursor: pointer;
+	font-weight: 800;
+	background-color: lightgray;
+	width: 50px;
+	height: 20px;
+	margin: auto;
+}
+
+#orders
+{
+	position: absolute;
+	font-family: Helvetica;
+}
+
+#orders div {
+	margin: 3px;
+	background-color: white;
+	border: 1px solid black;
+	width: 60px;
+	height: 20px;
+	text-align: center;
+	padding-top: 4px;
+	cursor: pointer;
+}
+
+#points {
+	border: none !important;
+	cursor: default !important;
 }

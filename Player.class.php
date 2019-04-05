@@ -8,6 +8,8 @@ Class Player
 	private $_spaceships;
 	private $_turn;
 	private $_active;
+	private $_pp;
+	private $_hasMove;
 
 	const ORDER = 0;
 	const MOVE = 1;
@@ -19,6 +21,7 @@ Class Player
 		$this->_spaceships = array();
 		$this->_turn = self::ORDER;
 		$this->_active = -1;
+		$this->_hasMove = 0;
 	}
 
 	public function addSpaceship(Spaceship $s)
@@ -34,6 +37,56 @@ Class Player
 	public function getName()
 	{
 		return $this->_name;
+	}
+
+	public function getTurn()
+	{
+		return $this->_turn;
+	}
+
+	public function setTurn($t)
+	{
+		$this->_turn = $t;
+	}
+
+	public function getPP()
+	{
+		return $this->_pp;
+	}
+
+	public function setPP($pp)
+	{
+		$this->_pp = $pp;
+	}
+
+	public function getActive()
+	{
+		return $this->_active;
+	}
+
+	public function setActive($a)
+	{
+		$this->_active = $a;
+	}
+
+	public function improveSpeed()
+	{
+		$this->_speedBonus++;
+	}
+
+	public function getSpeedBonus()
+	{
+		return $this->_speedBonus;
+	}
+
+	public function setMove($m)
+	{
+		$this->_hasMove = $m;
+	}
+
+	public function getMove()
+	{
+		return $this->_hasMove;
 	}
 }
 

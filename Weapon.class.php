@@ -9,6 +9,7 @@ Class Weapon
 	protected $_effectZone;
 	protected $_abilities;
 	protected $_initialCharges;
+	protected $_name;
 
 	const SIDE_LASER = 0;
 	const LANCE = 1;
@@ -29,6 +30,16 @@ Class Weapon
 			$this->_name = $arr['name'];
 		}
 		$this->_charge = $this->_initialCharges;
+	}
+
+	public function addCharge()
+	{
+		$this->_charges++;
+	}
+
+	public function getName()
+	{
+		return $this->_name;
 	}
 }
 

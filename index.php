@@ -17,6 +17,17 @@ include_once('draw.php');
 
 </div>
 
+<div id="turn"></div>
+<div id="player_turn"></div>
+<div id="next_phase" class="unselectable" onclick="nextPhase();">></div>
+
+<div id="orders" style="display: none">
+<div id="points"></div>
+<div id="speed" onclick="improveSpeed()">Speed</div>
+<div id="shield" onclick="improveShield()">Shield</div>
+<div id="life">Health</div>
+</div>
+
 </body>
 
 <script src="logic.js"></script>
