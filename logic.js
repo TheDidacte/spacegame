@@ -172,8 +172,6 @@ function onTileClick(index)
 				$('#game div').removeClass('blue');
 				$('.selected').removeClass('selected');
 				getSpaceshipPos();
-				selectedShip[0][0] = i;
-				selectedShip[0][1] = j;
 				for (var k = 0; k < selectedShip[1][0]; k++)
 					for (var l = 0; l < selectedShip[1][1]; l++)
 						$('#game div:nth-child('+ (k + 1 + selectedShip[0][0] + 150 * (l + selectedShip[0][1])) +')').addClass('selected');
