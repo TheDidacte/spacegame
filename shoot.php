@@ -27,7 +27,9 @@ foreach ($g->getPlayers() as $p_id => $p)
 					$touched = array($p_id, $s_id);
 					$dist = sqrt(($ship->getPos()[0] - $x) * ($ship->getPos()[0] - $x) + ($ship->getPos()[1] - $y) * ($ship->getPos()[1] - $y));
 					if ($dist < $weapon->getRanges()[2])
+					{
 						echo 'touch';
+					}
 				}
 			}
 		}

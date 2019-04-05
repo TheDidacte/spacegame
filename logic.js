@@ -90,14 +90,12 @@ function nextPhase()
 	if (selectedShip != 0)
 	$.post('setNextPhase.php', {}, function (res){
 		$('#orders').hide();
-		console.log(res);
 		updateTurn();
 	});
 }
 
 function openPPMenu(x, y)
 {
-	console.log(x, y);
 	$.post('setPlayerPP.php', {}, function (res) {
 		loadWeapons();
 		$('#points')[0].innerHTML = res + ' PP';
@@ -144,7 +142,6 @@ function onTileClick(index)
 		var i = index % 150;
 		var j = Math.floor(index / 150);
 		$.post('moveShip.php', {x: i, y: j}, function(e){
-			console.log(e);
 			if (parseInt(e) > 0)
 			{
 				players[turn][1] = [];
@@ -166,7 +163,6 @@ function onTileClick(index)
 		var i = index % 150;
 		var j = Math.floor(index / 150);
 		$.post('shoot.php', {x: i, y: j}, function (e){
-			console.log(e);
 		});
 	}
 	if (selectedShip != 0)

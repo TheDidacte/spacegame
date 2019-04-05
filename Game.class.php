@@ -2,6 +2,9 @@
 
 require_once('Player.class.php');
 require_once('IGame.class.php');
+require_once('Roug.class.php');
+require_once('Cuirasse.class.php');
+
 
 Class Game implements IGame
 {
@@ -92,8 +95,8 @@ Class Game implements IGame
 			$pos = 99;
 			foreach ($this->_players[1]->getSpaceships()as $e)
 			{
-				$e->setPos(array(150 - $e->getSize()[0], $pos));
-				$pos -= $e->getSize()[1] - 1;
+				$e->setPos(array(150 - $e->getSize()[0], $pos - $e->getSize()[1]));
+				$pos -= $e->getSize()[1] + 1;
 			}
 		}
 	}
