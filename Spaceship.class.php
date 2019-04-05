@@ -67,6 +67,25 @@ abstract Class Spaceship
 		$this->_hasMove = 0;
 		echo 'pute';
 	}
+
+	public function damage()
+	{
+		if ($this->_shield > 0)
+			$this->_shield--;
+		else if ($this->_life > 1)
+			$this->_life--;
+		else
+		{
+			$this->_life = 0;
+			return 1;
+		}
+		return 0;
+	}
+
+	public function isDead()
+	{
+		return $this->_life === 0;
+	}
 }
 
 ?>

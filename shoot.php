@@ -28,16 +28,14 @@ foreach ($g->getPlayers() as $p_id => $p)
 					$dist = sqrt(($ship->getPos()[0] - $x) * ($ship->getPos()[0] - $x) + ($ship->getPos()[1] - $y) * ($ship->getPos()[1] - $y));
 					if ($dist < $weapon->getRanges()[2])
 					{
-						echo 'touch';
+						$dead = $g->getPlayers()[$p_id]->getSpaceships()[$s_id]->damage();
+						echo $dead;
+						$_SESSION['game'] = serialize($g);
 					}
 				}
 			}
 		}
 	}
 }
-
-if ($dist)
-
-	echo $dist;
 
 ?>

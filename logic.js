@@ -144,7 +144,8 @@ function onTileClick(index)
 		$.post('moveShip.php', {x: i, y: j}, function(e){
 			if (parseInt(e) > 0)
 			{
-				players[turn][1] = [];
+				players[0][1] = [];
+				players[1][1] = [];
 				$('#game div').removeClass('red');
 				$('#game div').removeClass('blue');
 				$('.selected').removeClass('selected');
@@ -158,11 +159,30 @@ function onTileClick(index)
 				}
 		});
 	}
-	else if (player_turn == 2)
+	else if (player_turn == 2) // Shoot
 	{
 		var i = index % 150;
 		var j = Math.floor(index / 150);
 		$.post('shoot.php', {x: i, y: j}, function (e){
+			if (parseInt(e) == 1)
+			{
+				players[0][1] = [];
+				players[1][1] = [];
+				$('#game div').removeClass('red');
+				$('#game div').removeClass('blue');
+				$('.selected').removeClass('selected');
+				getSpaceshipPos();
+				selectedShip[0][0] = i;
+				selectedShip[0][1] = j;
+				for (var k = 0; k < selectedShip[1][0]; k++)
+					for (var l = 0; l < selectedShip[1][1]; l++)
+						$('#game div:nth-child('+ (k + 1 + selectedShip[0][0] + 150 * (l + selectedShip[0][1])) +')').addClass('selected');
+				
+				nextPhase();
+				alert('Nice shot !');
+			}
+			else
+				console.log('alive');
 		});
 	}
 	if (selectedShip != 0)

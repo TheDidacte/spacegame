@@ -16,4 +16,12 @@ protected $_weapons;
 protected $_idle;
 protected $_activated;
 
-This class doesn't provide any special method, only getters and setters for its attributes.
+This class provides the following methods:
+
+public function isDead();
+Return true if the spaceship has been killed
+
+public function damage();
+Hits the spaceship for 1 point of damage
+
+This class also provides getters and setters for its attributes.
